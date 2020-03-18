@@ -1,0 +1,78 @@
+
+/*header           =  selector
+background-color   =  property
+#244751            =  value
+
+Notice we didn't need a special class on the <header> to target the element. Using the HTML tag directly in CSS is a quick and easy way to target all instances of that tag. We use the class attribute when we want to get more specific with which elements we're selecting.
+
+But wait: if we already had a color that was being applied to the header, how does the browser decide which one to use? By following the cascade rules!
+
+There are a bunch of kind-of-confusing rules about which CSS rules take precedence over others, but the following couple rules of thumb are worth knowing.
+
+The more specific a rule, the more likely it is to have precedence.
+Rules declared after other rules (all else equal) will take precedence.
+*/
+
+header{
+    background-color: #244751;
+    color: #E8fdff;
+}
+
+body{
+    background-color:whitesmoke;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Roboto Condensed', sans-serif;*/
+}
+
+main{
+    background-color: white;
+    padding: 16px;
+}
+
+.finstagram-post{
+    margin-bottom: 48px;
+}
+
+/*
+
+.finstagram-post .user-info img {
+    border-radius: 50%;
+}
+
+This means CSS will target all img elements inside elements with class="user-info" which are themselves inside elements with class="finstagram-post". And hat do you think the border-radius property does?
+
+Ah yes, the classic Insta — err... Finstagram look.*/
+.finstagram-post .user-info img {
+    border-radius: 50%;
+}
+
+/*
+  a.photo:hover{
+    padding: 10px;
+  }
+
+Look at the selector. It has three key parts that tell the application what to do, and when.
+
+The a tells it to select any <a></a> tag.
+The .photo tells it to select any <a></a> tag with the class photo (looks like this: <a class="photo"></a>).
+The :hover tells it to only apply the properties if the element has the mouse hovered over it.*/
+a.photo:hover{
+    padding:10px;
+    transition:padding 0.5s;
+}
+
+/*
+  a.photo{
+    transition: padding 0.5s;
+  }
+We moved the transition property to a new selector, a.photo. This means that any a element with the class photo will transition the padding property over the span of 0.5 seconds whenever it changes. This means that whether we are hovered over the image or not, the element will take 0.5s to change it's padding property.
+
+*/
+  a.photo{
+    transition: padding 0.5s;
+  }
+  
+  a.photo:hover{
+    padding: 10px;
+  }
+
