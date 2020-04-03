@@ -14,3 +14,29 @@
     <button class="button" type="submit">Post</button>
   </div>
 </form>
+
+<img id="preview" style ="display: none; max-width: 200px;" src=""> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+<script>
+
+    $(document).ready(function(){
+
+        $("#photo_url").on("blur", function(event){
+
+            var photo_url = $(this).val();
+            var preview = $("#preview");
+
+            if(photo_url) {
+                preview.attr("scr", photo_url);
+                preview.show();
+            } else {
+                preview.hide();
+            }
+
+        });
+
+    });
+
+</script>
+
