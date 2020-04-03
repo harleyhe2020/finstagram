@@ -10,7 +10,7 @@ class CreateBaseTables < ActiveRecord::Migration[5.2]
     end
 
     create_table :finstagram_posts do |t|
-      t.references :user
+      t.references :user_id
       t.string :photo_url
       t.timestamps
     end
